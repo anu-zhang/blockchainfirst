@@ -6,21 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "n",
-						"type": "uint256"
-					}
-				],
-				"name": "decrement",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
-				"name": "get",
+				"name": "accountBalance",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -32,29 +19,36 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "n",
-						"type": "uint256"
-					}
-				],
-				"name": "increment",
+				"inputs": [],
+				"name": "deposit",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "depositeAmount",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "x",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "initiallize",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "whoDeposited",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -67,7 +61,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Counter.sol": "Counter"
+			"AccountsDemo.sol": "AccountsDemo"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -81,11 +75,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"Counter.sol": {
-			"keccak256": "0x81fbf2fb9e91b26bbb124403651018d061652018d616ceb58c099fa5cfac939b",
+		"AccountsDemo.sol": {
+			"keccak256": "0xfb6124e0844d950f6255633cb3af1adb8bbe8f9b27d2e65e3728540d319fe6c2",
 			"urls": [
-				"bzz-raw://0a7f46010f36b67ec6dc3caad35a3247674503e4ff250a434e1809bbdcb89cd0",
-				"dweb:/ipfs/Qmacy1dgvQzeYxgqy9cjUUs89C7sZEiYhT9CHc1KnqyZ3T"
+				"bzz-raw://c476e9dd3d33c7f278e32adcfd3a0a75816572d3c83aa0473a91fa9083a07af2",
+				"dweb:/ipfs/QmZ7D7ZreQVZ7eJv6KwKJptqk5Z3kNWeR7vLqLuLeY9qwC"
 			]
 		}
 	},

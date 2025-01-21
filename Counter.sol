@@ -8,7 +8,7 @@ contract Counter {
         }
 
         function get() view public returns (uint){
-            return value;
+            return address(this).balance;
         }
 
         function increment (uint n) public {
