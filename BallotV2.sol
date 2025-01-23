@@ -4,9 +4,9 @@ pragma solidity ^0.6.0;
 //主席，选民，任何人
 
 contract BallotV2 {
-    address public chairperson;
+    address public chairperson;//默认storage
 
-    struct  Voter  {
+    struct  Voter  {//默认memory
         uint  weight;
         bool  voted;
         uint note;
@@ -38,7 +38,7 @@ contract BallotV2 {
         if (msg.sender != chairperson){
             revert("只有主席才可以改变投票状态");
         }
-        if(  changestate >= state){
+        if(  changestate <= state){
                revert("只能设置下一个状态");
         }
         if(state == Phase.Done){
