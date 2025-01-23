@@ -41,6 +41,38 @@
 			},
 			{
 				"inputs": [],
+				"name": "chairperson",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "membership",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "register",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -138,10 +170,10 @@
 	},
 	"sources": {
 		"Airlines.sol": {
-			"keccak256": "0x0c6bc82f7fb4a7072e365c5603e4c0cc1167dfc75d05dc61621351c17c1de4ac",
+			"keccak256": "0xf82a9929acefd7e8d1271aaf9f92434adfbda9d1b6b9ffdf334fe39bd54526e4",
 			"urls": [
-				"bzz-raw://b2712ed89c066d6ea92d39596ebbe8940504f7984f0d8c5d1220023761b3f5b8",
-				"dweb:/ipfs/QmZ3BSeRUuW6A4LTB1P3PXJXUcyT2eTYpe5uUTSPYn6wUx"
+				"bzz-raw://ce1954b65ec39713b9da1d86a3544c87306de17485317d184d6a60c2339baef3",
+				"dweb:/ipfs/QmQiVyQcyAxUPVgvAj1aEXwe2bQeRtPyaz6pGLQkUqiTzj"
 			]
 		}
 	},

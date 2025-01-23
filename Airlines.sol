@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 
 contract Airlines {
-    address chairperson;
+    address public chairperson;
 
     struct details{
         uint escrow;//
@@ -10,7 +10,7 @@ contract Airlines {
     }
 
     mapping (address => details) public balanceDetails;//航空公司账号支付详情
-    mapping (address => uint) membership; //航空公司会员映射
+    mapping (address => uint) public membership; //航空公司会员映射
 
     //modifiers or rules
     modifier chairPersonOnly() {
@@ -18,21 +18,22 @@ contract Airlines {
         _;
     }
 
-    modifier membershipOnly(){
+    modifier onlyMembership(){
         require(membership[msg.sender]==1);
         _;
     }
     constructor () public payable {
         chairperson = msg.sender;//  chairPerson is the address of the contract
+       membership[msg.sender]=1;       //自动注册
         balanceDetails[msg.sender].escrow = msg.value; //初始化空余额为零
-        membership[msg.sender]=1;       //自动注册
+        
 
     }
 
     function register() public payable{
-       address AirlineA = msg.sender;
-       membership[AirlineA] = 1;
-       balanceDetails[msg.sender].escrow = msg.value;
+    //    address AirlineA = msg.sender;
+    //    membership[AirlineA] = 1;
+    //    balanceDetails[msg.sender].escrow = msg.value;
         
     } 
     
@@ -46,15 +47,15 @@ contract Airlines {
         balanceDetails[AirlineZ].escrow=0;
     }
 
-    function request(address toAirline,uint hashOfDetails) membershipOnly public {
+    function request(address toAirline,uint hashOfDetails) onlyMembership public {
         if(membership[toAirline] !=1){
             revert();
         }
         balanceDetails[msg.sender].status = 0;
          balanceDetails[msg.sender].hashOfDetails = hashOfDetails;// 
     }
-    function respone(address fromAirline,uint hashOfDetails,uint done) membershipOnly public {
-        if (balanceDetails[fromAirline].status != 1){
+    function respone(address fromAirline,uint hashOfDetails,uint done) onlyMembership public {
+        if (membership[fromAirline] != 1){
             revert();
         }
         balanceDetails[msg.sender].status = done;
@@ -66,12 +67,12 @@ contract Airlines {
     //2 修改B航空公司的余额
     //3 修改A航空公司的余额
     //4 给B航空公司转钱
-    function settlePayment(address payable toAirline) membershipOnly payable public {
+    function settlePayment(address payable toAirline) onlyMembership payable public {
 
         address fromAirline = msg.sender;
         uint amount = msg.value;
         balanceDetails[toAirline].escrow = balanceDetails[toAirline].escrow + amount;
-        balanceDetails[fromAirline].escrow = balanceDetails[fromAirline].escrow + amount;
+        balanceDetails[fromAirline].escrow = balanceDetails[fromAirline].escrow - amount;
         toAirline.transfer(amount);
     }
     
