@@ -1,0 +1,91 @@
+{
+	"compiler": {
+		"version": "0.6.0+commit.26b70077"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "numProposals",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "register",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reqWinner",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "winningProposal",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "toProposal",
+						"type": "uint256"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BallotV4.sol": "Ballot"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BallotV4.sol": {
+			"keccak256": "0xb0d969905c856dc75775457c46cadfe58cf05cd22f5dcdb61b7a162977366076",
+			"urls": [
+				"bzz-raw://52d9f31ec32be557a284220f1a58262fcbe8a94fd1fb0d42a575f861f2cba60c",
+				"dweb:/ipfs/QmeGw7dp8NqV5CEUdP9Jz7Dzw2hFCPRFazD3yEDAmdyNco"
+			]
+		}
+	},
+	"version": 1
+}

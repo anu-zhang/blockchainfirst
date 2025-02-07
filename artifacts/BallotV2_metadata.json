@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.0+commit.26b70077"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -105,15 +105,19 @@
 			}
 		],
 		"devdoc": {
-			"methods": {}
+			"kind": "dev",
+			"methods": {},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"BallotV3.sol": "BallotV2"
+			"BallotV2.sol": "BallotV2"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -127,7 +131,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"BallotV3.sol": {
+		"BallotV2.sol": {
 			"keccak256": "0x2e022e899fc4714c760c60d646ebd5cd82ea522a8b3d06a090eae390885cd3b0",
 			"urls": [
 				"bzz-raw://3a350eee2cb5032c2342d7af36f20c47c654e5f0b0ea5a2d3addfcbf49af34c8",
